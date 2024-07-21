@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sign Up</title>
+    <style>
+      form {
+        border: 1px solid black;
+        width: 300px;
+        padding: 10px;
+        background-color: rgb(216, 217, 214);
+      }
+      input {
+        width: 90%;
+        margin-right: 20px;
+      }
+      button {
+        border: none;
+        width: 100px;
+        margin-top: 20px;
+        background-color: rgb(47, 47, 235);
+        color: white;
+        cursor: pointer;
+        height: 30px;
+      }
+      a {
+        color: red;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SIGN UP</h1>
+    <form action="{{ url_for('signup') }}" method="post">
+      First name:<input
+        type="text"
+        name="first_name"
+        placeholder="First Name"
+        required
+      />
+      Last name:<input
+        type="text"
+        name="last_name"
+        placeholder="Last Name"
+        required
+      />
+      Email:<input type="email" name="email" placeholder="Email" required />
+      Password:<input
+        type="password"
+        name="password"
+        placeholder="Password"
+        required
+      />
+      Confirm password:<input
+        type="password"
+        name="confirm_password"
+        placeholder="Confirm Password"
+        required
+      />
+      <button type="submit">Register Now</button>
+    </form>
+    <p>
+      Already have an account? <a href="{{ url_for('signin') }}">Sign In</a>
+    </p>
+  </body>
+</html>
